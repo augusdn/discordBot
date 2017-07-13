@@ -12,9 +12,24 @@ namespace DiscordBot
     class MyBot
     {
         DiscordClient discord;
+        CommandService commands;
+
+        Random rand;
+
+        string[] freshestMemes;
 
         public MyBot()
         {
+            rand = new Random();
+
+            freshestMemes = new string[]
+            {
+                "memes/meme1.jpg",
+                "memes/meme2.jpg",
+                "memes/meme3.jpg",
+                "memes/meme4.jpg"
+            };
+
             discord = new DiscordClient(x =>
             {
                 x.LogLevel = LogSeverity.Info;
@@ -27,18 +42,25 @@ namespace DiscordBot
                 x.AllowMentionPrefix = true;
             });
 
-            var commands = discord.GetService<CommandService>();
+            commands = discord.GetService<CommandService>();
 
-            commands.CreateCommand("hello")
-                .Do(async (e) =>
-                {
-                    await e.Channel.SendMessage("Hi!");
-                });
+            RegisterMemeCommand();
 
             discord.ExecuteAndWait(async () =>
             {
                 await discord.Connect("MzM0OTg0ODEyNjM5MDI3MjEw.DEjWvw.19MwXHtk9b7vlcyprzZQCnmFwH0", TokenType.Bot);
             });
+        }
+
+        private void RegisterMemeCommand()
+        {
+            commands.CreateCommand("meme")
+                .Do(async (e) =>
+                {
+                    int randomMemeIndex = rand.Next(freshestMemes.Length);
+                    string memeToPost = freshestMemes[randomMemeIndex];
+                    await e.Channel.SendFile(memeToPost);
+                });
         }
 
         private void Log(object sender, LogMessageEventArgs e)

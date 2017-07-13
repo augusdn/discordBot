@@ -26,3 +26,7 @@ c:\users\aug-desktop\documents\visual studio 2017\Projects\DiscordBot\DiscordBot
 c:\users\aug-desktop\documents\visual studio 2017\Projects\DiscordBot\DiscordBot\bin\Debug\System.Interactive.Async.xml
 c:\users\aug-desktop\documents\visual studio 2017\Projects\DiscordBot\DiscordBot\obj\Debug\DiscordBot.exe
 c:\users\aug-desktop\documents\visual studio 2017\Projects\DiscordBot\DiscordBot\obj\Debug\DiscordBot.pdb
+C:\Users\Aug-Desktop\documents\visual studio 2017\Projects\DiscordBot\DiscordBot\bin\Debug\memes\meme1.jpg
+C:\Users\Aug-Desktop\documents\visual studio 2017\Projects\DiscordBot\DiscordBot\bin\Debug\memes\meme2.jpg
+C:\Users\Aug-Desktop\documents\visual studio 2017\Projects\DiscordBot\DiscordBot\bin\Debug\memes\meme3.jpg
+C:\Users\Aug-Desktop\documents\visual studio 2017\Projects\DiscordBot\DiscordBot\bin\Debug\memes\meme4.jpg
